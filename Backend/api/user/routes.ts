@@ -7,7 +7,7 @@ const { getAllUsers, getUserById, createUser, loginUser, deleteUser} = userContr
 
 const userRouter = express.Router();
 
-userRouter.get('/', authorizeRole("patient"), getAllUsers);
+userRouter.get('/', getAllUsers);
 userRouter.get('/:id', getUserById);
 userRouter.post('/register',createUser);
 userRouter.post('/login',loginUser);

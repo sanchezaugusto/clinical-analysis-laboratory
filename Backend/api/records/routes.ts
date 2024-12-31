@@ -7,9 +7,9 @@ const { getAllRecords, getRecordById, createRecord, deleteRecord} = recordContro
 
 const recordRouter = express.Router();
 
-recordRouter.get('/', getAllRecords);
-recordRouter.get('/:id', getRecordById);
-recordRouter.post('/newRecord', authorizeRole, createRecord);
-recordRouter.delete('/delete/:id', deleteRecord);
+recordRouter.get('/', authorizeRole(["professional"]), getAllRecords);
+recordRouter.get('/:id', authorizeRole(["professional,patient"]), getRecordById);
+recordRouter.post('/newRecord', authorizeRole(["professional"]), createRecord);
+recordRouter.delete('/delete/:id', authorizeRole(["professional"]), deleteRecord);
 
 export default recordRouter;
