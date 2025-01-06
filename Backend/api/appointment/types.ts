@@ -1,5 +1,6 @@
-export interface Appointment {
-    requesterId: string;
+export interface IAppointment {
+    _id: string,
+    _id_patient: string;
     requestDate: string;
     appointmentDate: string;
     appointmentTime: string;
