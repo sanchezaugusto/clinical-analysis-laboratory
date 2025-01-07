@@ -1,10 +1,10 @@
 export interface IAppointment {
-    _id: string,
+    _id: string | undefined;
     _id_patient: string;
     requestDate: string;
     appointmentDate: string;
     appointmentTime: string;
-    status: 'pending' | 'confirmed' | 'cancelled';
+    status: 'scheduled' | 'completed' | 'cancelled';
     reason?: string;
     notes?: string;
     phone?: string;
@@ -12,4 +12,6 @@ export interface IAppointment {
     channel?: string;
     duration?: number;
     priority?: 'high' | 'medium' | 'low';
+    createAt?: Date;
+    updatedAt?: Date;
 }
