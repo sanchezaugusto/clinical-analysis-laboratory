@@ -7,7 +7,6 @@ const {getUsers, getUserById, createUser, loginUser, deleteUser} = userService;
 class UserController {
   async getAllUsers(req: Request, res: Response) {
     try {
-        console.log("controller");
         const users = await getUsers();
         return res.status(200).json(users);
       } catch (error) {
@@ -17,7 +16,6 @@ class UserController {
   async getUserById(req: Request, res: Response){
     const id = req.params.id;
     try{
-        console.log("controller");
         const users = await getUserById(id);
         return res.status(200).json(users);
     }catch(error){
@@ -26,8 +24,7 @@ class UserController {
   }
   async createUser(req: Request, res: Response){
     try{
-        const userBody = req.body;
-        
+        const userBody = req.body;  
         const user = await createUser(userBody);
         res.status(201).json(user);
     }catch (error) {

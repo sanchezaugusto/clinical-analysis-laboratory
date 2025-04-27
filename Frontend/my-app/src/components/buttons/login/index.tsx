@@ -3,11 +3,12 @@ import Link from 'next/link';
 
 const LoginButton = () => {
     return (
-        <Link className="px-4 py-2 text-sm font-medium text-white bg-blue-700 rounded-md shadow hover:bg-blue-500 transition-all"
-              href="/login">
-            
-                Login
-            
+        <Link
+            href="/login"
+            aria-label="Ir a la página de login"
+            className="px-6 py-3 text-lg md:text-xl font-medium text-white bg-blue-700 rounded-md shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
+        >
+            Login
         </Link>
     );
 };

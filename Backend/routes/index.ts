@@ -1,6 +1,6 @@
 import express from 'express';
 import userRouter from '../api/user/routes';
-import recordRouter from '../api/records/routes';
+import recordRouter from '../api/record/routes';
 
 const router = express.Router();
 
